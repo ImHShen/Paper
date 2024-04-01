@@ -10,5 +10,8 @@
         "Deep Q-Network",
         "hybrid MPS-NN network (QMPS)",
         "QMPO"],
-    "conclusion":""
+    "conclusion":["QMPS proposes the use of a tensor-network variational ansatz inspired by quantum many-body physics to offer a novel RL learning architecture.",
+    "Therefore, a successfully trained QMPS agent is capable of devising optimal protocols for a continuous set of initial states, and selects actions on-the-fly according to the current state visited.",
+    ""],
+    "construct": {}
 }

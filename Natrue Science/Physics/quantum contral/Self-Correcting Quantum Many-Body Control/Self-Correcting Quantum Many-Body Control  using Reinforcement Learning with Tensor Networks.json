@@ -1,0 +1,14 @@
+{
+    "key": ["paper","doing","done","state","goal","method","conclusion"], 
+    "paper":"Self-Correcting Quantum Many-Body Control using Reinforcement Learning with Tensor Networks",
+    "doing":1,
+    "done":0,
+    "state":1,
+    "goal":"effeciently controlling quantum many-body system",
+    "method":
+        ["Matrix product states (MPS)",
+        "Deep Q-Network",
+        "hybrid MPS-NN network (QMPS)",
+        "QMPO"],
+    "conclusion":""
+}

@@ -1,0 +1,33 @@
+{
+    "key": ["paper","doing","done","state","goal","method","conclusion"], 
+    "paper":"Reinforcement Learning in Different Phases of Quantum Control",
+    "doing": true,
+    "done": false,
+    "state": "writing",
+    "goal":"load a nonintegrable interacting quantum system into a desired target state",
+    "method":
+        [""],
+    "conclusion":["",
+    ""],
+    "construct": {
+        "title": "Reinforcement Learning in Different Phases of Quantum Control",
+        "author": "Bukov, Marin and Day, Alexandre G. R. and Sels, Dries and Weinberg, Phillip and Polkovnikov, Anatoli and Mehta, Pankaj",
+        "journal": "Phys. Rev. X",
+        "abstract": "",
+        "introduction": "",
+        "Reinforcement learning": {
+            "definition": "",
+            "name": "a modifiedversion of Watkins online, off-policy Q-learning algorithmwith",
+            "detailed discription": {
+                "": ""
+            }
+        },
+        "phases of quantum control": {
+            "single-qubit manipulation": {
+                "environment description": ""
+            },
+            "many-coupled qubits": ""
+        },
+        "conclusion": ""
+    }
+}

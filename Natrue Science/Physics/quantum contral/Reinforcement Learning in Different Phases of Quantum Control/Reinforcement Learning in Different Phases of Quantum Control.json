@@ -24,9 +24,32 @@
         },
         "phases of quantum control": {
             "single-qubit manipulation": {
-                "environment description": ""
+                "purpose(before)": "to benchmark the application of RL to physics problems",
+                "environment description": "a two-level system",
+                "purpose": [
+                    "benchmark the protocol obtained by RL agent.",
+                    "reveal an important novel perspective on the complexity of quantum-state manipulation."
+                ],
+                "proccess": {
+                    "performance metric": {
+                        "for fixed total protocol duration T(控制协议总时间的约束)": "infidelity$h x(t) \rightarrow I_h(T)=1-F_h(T)$",
+                        "for bang-bang protocols(协议形式的描述)": "infidelity & correlator",
+                        "To study the correlations between the infidelity  minima as a function of the total protocol duration T(评估在总协议时间T内不同bang-bang协议间的相关性)": "correlator: $q(T)=\\frac{1}{16 N_T} \\sum_{j=1}^{N_T} \\overline{\\left\\{h_x(j \\delta t)-\\overline{h_x}(j \\delta t)\\right\\}^2}$(the behavior of the correlator q(T) show in Fig. 1)"
+                    },
+                    "result presentation": {
+                        "T > T_QSL": "",
+                        "T = T_QSL": "",
+                        "T_QSL > T > T_c": "",
+                        "T < T_c": ""
+                    }
+
+
+                }
             },
-            "many-coupled qubits": ""
+            "many-coupled qubits": {
+                "objective": ""
+            }
+
         },
         "conclusion": ""
     }

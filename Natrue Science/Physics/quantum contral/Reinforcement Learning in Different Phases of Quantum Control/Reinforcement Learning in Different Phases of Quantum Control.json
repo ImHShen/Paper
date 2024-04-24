@@ -1,4 +1,5 @@
 {
+    "doi": "https://doi.org/10.1103/PhysRevX.8.031086",
     "key": ["paper","doing","done","state","goal","method","conclusion"], 
     "paper":"Reinforcement Learning in Different Phases of Quantum Control",
     "doing": true,
@@ -17,7 +18,7 @@
         "introduction": "",
         "Reinforcement learning": {
             "definition": "",
-            "name": "a modifiedversion of Watkins online, off-policy Q-learning algorithmwith",
+            "description": "a modified version of Watkins online, off-policy Q-learning algorithm with linear function approximation and eligibility traces",
             "detailed discription": {
                 "": ""
             }
@@ -25,25 +26,66 @@
         "phases of quantum control": {
             "single-qubit manipulation": {
                 "purpose(before)": "to benchmark the application of RL to physics problems",
-                "environment description": "a two-level system",
+                "environment description": {
+                    "a two-level system": {
+                        "Hamiltonian": ""
+                    }
+                },
+                "task": {
+                    "initial state to target state": ""
+                },
                 "purpose": [
                     "benchmark the protocol obtained by RL agent.",
                     "reveal an important novel perspective on the complexity of quantum-state manipulation."
                 ],
                 "proccess": {
                     "performance metric": {
+                        "fidelity": {
+                            "formula": "F_h(T)=|⟨ψ_* | ψ(T)⟩|^2",
+                            "description": "the fidelity between the target state |ψ_*⟩ and the state |ψ(T)⟩ at the end of the protocol T"
+                        },
+                        "variational fidelity": {
+                            "formula": "𝓕ₕ(T)",
+                            "description": ""
+                        },
+                        "protocol strength": "h_x(t)",
+                        "infidelity": "h_x(t)->I_h(T)=1-F_h(T)",
+                        "the correlator relate to the Edwards-Anderson order parameter": {
+                            "formula": "q(T)=\\frac{1}{16 N_T} \\sum_{j=1}^{N_T} \\overline{\\left\\{h_x(j \\delta t)-\\overline{h_x}(j \\delta t)\\right\\}^2}",
+                            "description": {
+                                "sample-averaged protocol": "\\overline{h_x}(t)=N_{\\text {real }}^{-1} \\sum_{\\alpha=1}^{N_{\\text {real }}} h_x^\\alpha(t)",
+                                "if minima protocol are all uncorrelated": "\\overline{h_x}(t) ≡ 0 --> q(T) = 1",
+                                "if the infidelity landscape contains only one minimum": "\\overline{h_x}(t) ≡ h_x(t) --> q(T) = 0"
+                                
+
+                            }
+                        },
+
+
                         "for fixed total protocol duration T(控制协议总时间的约束)": "infidelity$h x(t) \rightarrow I_h(T)=1-F_h(T)$",
                         "for bang-bang protocols(协议形式的描述)": "infidelity & correlator",
                         "To study the correlations between the infidelity  minima as a function of the total protocol duration T(评估在总协议时间T内不同bang-bang协议间的相关性)": "correlator: $q(T)=\\frac{1}{16 N_T} \\sum_{j=1}^{N_T} \\overline{\\left\\{h_x(j \\delta t)-\\overline{h_x}(j \\delta t)\\right\\}^2}$(the behavior of the correlator q(T) show in Fig. 1)"
                     },
                     "result presentation": {
+                        "Controllable phase III": {
+                            "condition": "T > T_QSL",
+                            "explanation(说明)": [
+                                "one can construct infinitely many protocols which prepare the target state with unit fidelity, and the problem is in the controllable phase III",
+                                "In this phase, there is a proliferation of exactly degenerate, uncorrelated global infidelity minima corresponding to protocols of unit fidelity, and the optimization task is easy."
+                            ],
+                            "phenomenon": [
+                                "unit fidelity(保真度为单位值) -> to the target state(infinitely many protocols(无穷多的协议))",
+                                "unit fidelity(保真度为单位值) -> exactly degenerate(精确简并) optimization(protocol)",
+                                "q(T) = 1 -> uncorrelated global infidelity minima(不相关的全局不忠实最小值)"
+
+                            ],
+                            "figure and video": ["Fig. 1(a)", "Fig. 1(b)iii", "video 3"]
+                        },
                         "T > T_QSL": "",
                         "T = T_QSL": "",
                         "T_QSL > T > T_c": "",
                         "T < T_c": ""
                     }
-
-
                 }
             },
             "many-coupled qubits": {

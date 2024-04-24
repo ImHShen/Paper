@@ -1,0 +1,50 @@
+{
+    "key": ["paper","doing","done","state","goal","method","conclusion"], 
+    "paper":"",
+    "doing":1,
+    "done":0,
+    "state":1,
+    "goal":"",
+    "method":
+        [""],
+    "conclusion":["",
+    ""],
+    "construct": {
+        "title": "Spin-glass theory for pedestrians",
+        "author": "",
+        "year": "",
+        "journal": null,
+        "url": null,
+        "note": null,
+        "abstract":  [
+            
+        ],
+        "introduction": {
+        
+        },
+        "method": {
+
+        },
+        "result(details of the control studies)": {
+            "purpose": "",
+            "A. Universal state preparation from arbitrary initial quantum states": {
+                "1. Single-particle control": {
+                    "goal": "",
+                    "experiment setup": {
+                        "environment": "",
+                        "initial state": "",
+                        "fidelity threshold": ""
+                    },
+                    "result presentation": {
+                        "figure": "",
+                        "table": "",
+                        "description": [
+                            ""
+                        ]
+                    }
+                },
+                "2. Universal ground state preparation for N = 4 spins":{}
+        }
+        }
+    }
+}

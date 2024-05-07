@@ -1,0 +1,51 @@
+{
+    "key": ["paper","doing","done","state","goal","method","conclusion"], 
+    "paper":"CS285 Deep Reinforcement Learning HW4: Model-Based RL",
+    "doing":1,
+    "done":0,
+    "state":1,
+    "goal":"",
+    "method":
+        [""],
+    "conclusion":["QMPS proposes the use of a tensor-network variational ansatz inspired by quantum many-body physics to offer a novel RL learning architecture.",
+    "Therefore, a successfully trained QMPS agent is capable of devising optimal protocols for a continuous set of initial states, and selects actions on-the-fly according to the current state visited.",
+    ""],
+    "construct": {
+        "title": "Self-Correcting Quantum Many-Body Control using Reinforcement Learning with Tensor Networks",
+        "author": "",
+        "year": "",
+        "journal": null,
+        "url": null,
+        "note": null,
+        "introduction": {
+        
+        },
+        "Model-Based Reinforcement Learning": {
+            "Dynamics Model": "",
+            "Action Selection": "",
+            "On-Policy Data Collection": {
+                "concept": {
+                    "on-policy": {
+                        "explain": [
+                            "On-policy 方法的一个核心特征是策略的同步更新，即学习和决策使用的是同一策略。",
+                            "SARSA算法使用Q(s, a')来更新Q(s, a), 这里的a'是当前策略下的真实动作-同一策略中学习。"
+                        ],
+                        "example": "例如，SARSA 和 A2C 算法都是 on-policy 方法。"
+                    },
+                    "off-policy": {
+                        "explain": [
+                            "off-policy 方法允许代理从与其当前执行策略不同的策略中学习。",
+                            "Q-learning 算法使用max_{a'}Q(s', a')来更新Q(s, a), 这里的a'是当前策略下的最优动作(却不一定是真实动作-不同策略中学习)。"
+                        ],
+                        "example": "例如，Q-learning 和 DDPG 算法都是 off-policy 方法。"
+                    }
+
+                }
+                
+            },
+            "Ensembles": ""
+        },
+    "code": {}
+    }
+}
+        

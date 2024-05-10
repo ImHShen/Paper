@@ -82,6 +82,7 @@
                     "proccess": {
                         "training stage": {
                             "subtask": "代理被训练来在50个协议步骤或更少的步骤中准备目标基态",
+                            "challenge": "QMPS-1代理必须学会如何解开高度纠缠的状态以准备目标伊辛基态，同时还需要适当地纠缠乘积态以达到纠缠的目标态。[the learning curves of the QMPS-1 agent are shown in Supplemental Material:, Sec. S.3 A]",
                             "setting": {
                                "a many-body fidelity threshold": "𝐹^*  ≈ 0.85",
                                "initial state": [
@@ -92,17 +93,21 @@
                             },
                         "testing stage": {
                             "subtask": "测试代理的性能",
+                            "challenge": "",
                             "setting": {
                                 "initial state": [
+                                    "a many-body fidelity threshold 𝐹^*  ≈ 0.85",
                                     "10^3 random initial states"
                                 ],
                             "result": [
                                 "在约99.8%的情况下，保真度阈值在允许的50步内成功达到。"
                                 ],
-                            
                             "analysis": ["更高的保真度未能通过QMPS-1代理单独实现，这主要是由于行动空间的离散性和使用的固定步长，而不是算法本身的限制。[see Supplemental Material: Sec. S.3 A 2 for details]"]
                             },
-                            "compare": "Note that when following a conventional approach of training a neural network directly on the quantum wave function, we were not able to match the performance of the QMPS agent given the same number of parameters and training episodes."
+                            "advantages": [
+                                "与传统方法的比较：使用传统的基于神经网络直接在量子波函数上的方法相比，QMPS代理显示出更好的性能。这说明QMPS架构可能在从量子状态数据中提取相关特征方面拥有更自然的结构。[see Supplemental Material: Sec. S.3 A 2 for details]",
+                                "小系统的适用性：对于小规模系统，QMPS架构已经显示出其优势。"
+                            ]
                         },
                         "summarys": "这表明QMPS架构可能有一个更自然的结构来提取从量子状态数据中的相关特征，且在较小系统规模下已经显示出优势。",
                         "improve": {

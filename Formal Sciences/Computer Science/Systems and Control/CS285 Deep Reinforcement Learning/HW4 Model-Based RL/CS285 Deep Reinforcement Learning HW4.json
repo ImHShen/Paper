@@ -7,11 +7,11 @@
     "goal":"",
     "method":
         [""],
-    "conclusion":["QMPS proposes the use of a tensor-network variational ansatz inspired by quantum many-body physics to offer a novel RL learning architecture.",
-    "Therefore, a successfully trained QMPS agent is capable of devising optimal protocols for a continuous set of initial states, and selects actions on-the-fly according to the current state visited.",
-    ""],
+    "conclusion":[
+        ""
+    ],
     "construct": {
-        "title": "Self-Correcting Quantum Many-Body Control using Reinforcement Learning with Tensor Networks",
+        "title": "CS285 Deep Reinforcement Learning HW4: Model-Based RL",
         "author": "",
         "year": "",
         "journal": null,
@@ -20,10 +20,10 @@
         "introduction": {
         
         },
-        "Model-Based Reinforcement Learning": {
-            "Dynamics Model": "",
-            "Action Selection": "",
-            "On-Policy Data Collection": {
+        "2 Model-Based Reinforcement Learning": {
+            "2.1 Dynamics Model": "",
+            "2.2 Action Selection": "",
+            "2.3 On-Policy Data Collection": {
                 "concept": {
                     "on-policy": {
                         "explain": [
@@ -38,14 +38,62 @@
                             "Q-learning 算法使用max_{a'}Q(s', a')来更新Q(s, a), 这里的a'是当前策略下的最优动作(却不一定是真实动作-不同策略中学习)。"
                         ],
                         "example": "例如，Q-learning 和 DDPG 算法都是 off-policy 方法。"
+                    },
+                    "MBRL is theory off-policy": {
+                        "explain": [
+                            "MBRL不依赖于特定策略生成的数据。它可以利用从各种策略收集的历史数据，包括随机或旧策略的数据。"
+                        ]
                     }
-
-                }
-                
+                },
+                "performance analysis": [
+                    "如果MBRL只能访问随机收集的数据（非策略数据），而缺乏来自当前决策策略的数据（即策略数据），其性能通常会很差。这是因为随机收集的数据可能无法代表任务中最相关的状态空间（可以访问的所有可能状态的集合）部分。"
+                ],
+                "algorithm structure": [
+                    {
+                        "step": "Initialize",
+                        "action": "Run base policy π0(e.g., random policy) to collect initial data set D",
+                    },
+                    {
+                        "step": "main loop",
+                        "action": "Continue until termination condition is met",
+                        "substep": [
+                            {
+                                "Action": "Train function fθ using D (Equation 4)"
+                            },
+                            {
+                                "Action": "Set St to current agent state"
+                            },
+                            {
+                                "Step": "Rollout Loop",
+                                "Action": "Perform multiple rollouts from m = 0 to M",
+                                "Substeps": [
+                                    {
+                                        "Step": "Timestep Loop",
+                                        "Action": "For each timestep t from 0 to T",
+                                        "Substeps": [
+                                            {
+                                                "Action": "Compute optimal action sequence A* = πMPC(at, St) where πMPC is the process of optimizing Equation 8"
+                                            },
+                                            {
+                                                "Action": "Set at to the first action in A*"
+                                            },
+                                            {
+                                                "Action": "Execute action at and transition to next state St+1"
+                                            },
+                                            {
+                                                "Action": "Add transition (St, at, St+1) to dataset D"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
-            "Ensembles": ""
+            "2.4 Ensembles": ""    
         },
-    "code": {}
+        "3 Code": {}    
     }
 }
         

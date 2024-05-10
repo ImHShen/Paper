@@ -4,17 +4,12 @@
     "doing":1,
     "done":0,
     "state":1,
-    "goal":"effeciently controlling quantum many-body system",
+    "goal":"",
     "method":
-        ["Matrix product states (MPS)",
-        "Deep Q-Network",
-        "hybrid MPS-NN network (QMPS)",
-        "QMPO"],
-    "conclusion":["QMPS proposes the use of a tensor-network variational ansatz inspired by quantum many-body physics to offer a novel RL learning architecture.",
-    "Therefore, a successfully trained QMPS agent is capable of devising optimal protocols for a continuous set of initial states, and selects actions on-the-fly according to the current state visited.",
-    ""],
+        [""],
+    "conclusion":[""],
     "construct": {
-        "title": "Self-Correcting Quantum Many-Body Control using Reinforcement Learning with Tensor Networks",
+        "title": "Deep Dynamics Models for Learning Dexterous Manipulation",    
         "author": "",
         "year": "",
         "journal": null,
@@ -26,119 +21,38 @@
         "introduction": {
         
         },
-        "method(QUANTUM MANY-BODY CONTROL)": {
-            "subsection": "II. QUANTUM MANY-BODY CONTROL"
+        "2 Related Work": {
+            "subsection": ""
 
         },
-        "result(STATE INFORMED MANY BODY CONTROL)": {
-            "environment": {
-                "name": "1d mixed field Ising model",
-                "Hamiltonian": {
-                    "form": "\\hat{H}_{\\text {Ising }}=J \\sum_{j=1}^{N-1} \\hat{Z}_j \\hat{Z}_{j+1}-g_x \\sum_{j=1}^N \\hat{X}_j-g_z \\sum_{j=1}^N \\hat{Z}_j",
-                    "detailed Explanation of Each Term": {
-                        "ZZ Interaction Term:": {
-                            "form": "J \\sum_{j=1}^{N-1} \\hat{Z}_j \\hat{Z}_{j+1}",
-                            "parameter": {
-                                "J": {
-                                    "name": "Interaction Strength",
-                                    "J > 0": {
-                                        "effect": "ferromagnetic interaction",
-                                        "description": "the spins tend to align in the same direction"
-                                    },
-                                    "J < 0": {
-                                        "effect": "antiferromagnetic interaction",
-                                        "description": "the spins tend to align in the opposite direction"
-                                    }
-                                },
-                                "Z": {
-                                    "name": "Pauli-Z operator"
-                                }
-
-                            }
-                    },
-                        "Transverse Magnetic Field Term:": "",
-                        "Longitudinal Magnetic Field Term:": ""
-                    }
-                }
+        "3 Deep Models for Dexterous Manipulation": {
+            "propuse": "leverage the benefits of autonomous learning from data-driven methods while also enabling efficient and flexible task execution",
+            "method": {
+                "name": "PDDM",
+                "build": [
+                    "MPC with deep models",
+                    "ensembles for model uncertainty estimation"
+                ]
             },
-            "experiment": {
-                "Universal ground state preparation from arbitrary initial quantum states for N = 4 spins": "III. STATE INFORMED MANY BODY CONTROL",
-            "purpose": "to provide anther benchmark for the QMPS framework",
-            "A. Universal state preparation from arbitrary initial quantum states": {
-                "1. Single-particle control": {
-                    "task": {
-                        "name": "prepare a specific target ground state of a 4-spin transverse field Ising model",
-                        "subtask": {
-                            "noninteracting limit": {
-                                "environment setup": "J=0"
-                            },
-                            "nontrivial banchmark": {
-                                "environment setup": "J=-1, g_x=1, g_z=0",
-                                "purpose": "(非平凡的基准测试)尽管这个控制设置可以使用完整的波函数和传统的神经网络方法解决，但在整个连续的希尔伯特空间上均匀分布的初始状态创造了一个高度非平凡的学习问题。"
-                            
-                            }
-                        }
-                    },
-                    "proccess": {
-                        "training stage": {
-                            "subtask": "代理被训练来在50个协议步骤或更少的步骤中准备目标基态",
-                            "setting": {
-                               "a many-body fidelity threshold": "𝐹^*  ≈ 0.85",
-                               "initial state": [
-                                    "随机极化的乘积态（概率为 0.25）",
-                                    "随机反射对称态（概率为 0.75）"
-                               ],
-                               "exiplanation": "In this way the QMPS-l agent has to learn to bothdisentangle highly entangled states to prepare the lsingground state, but also to appropriatcly entangle productstates to rcach the entangled target the lcarning curvesof the QMPS-1 agent arc shown in Supplemental Matc-rial:, Sec.S.3A."
-                            },
-                        "testing stage": {
-                            "subtask": "测试代理的性能",
-                            "setting": {
-                                "initial state": [
-                                    "10^3 random initial states"
-                                ],
-                            "result": [
-                                "在约99.8%的情况下，保真度阈值在允许的50步内成功达到。"
-                                ],
-                            
-                            "analysis": ["更高的保真度未能通过QMPS-1代理单独实现，这主要是由于行动空间的离散性和使用的固定步长，而不是算法本身的限制。[see Supplemental Material: Sec. S.3 A 2 for details]"]
-                            },
-                            "compare": "Note that when following a conventional approach of training a neural network directly on the quantum wave function, we were not able to match the performance of the QMPS agent given the same number of parameters and training episodes."
-                        },
-                        "summarys": "这表明QMPS架构可能有一个更自然的结构来提取从量子状态数据中的相关特征，且在较小系统规模下已经显示出优势。",
-                        "improve": {
-                            "propuse": "To improve the fidelity between the final and the target state",
-                            "method": "通过训练第二个独立的代理（QMPS-2）来实现，这个代理有一个更高的多体保真度阈值𝐹^*  ≈ 0.97",
-                            "process": {
-                                "initial state": "again sampled randomly",
-                                "first": "use the already optimized QMPS-1 agent to reach the vicinity of the target state within F >0.85.",
-                                "then": "take those as initial states for the training of the second QMPS-2 agent"
-                            },
-                            "result": {
-                                "Fig. 2(a)": "learning curves of the QMPS-2 optimization",
-                                "Fig. 2(b)": "to prepare the Ising ground state (J = −1,gx = 1,gz = 0), starting from the z-polarized product state.",
-                                "Fig. 2(c)": "to prepare the Ising ground state (J = −1,gx = 1,gz = 0), starting from  the GHZ state.",
-                                "Fig. 2(d)": "to prepare the Ising ground state (J = −1,gx = 1,gz = 0), starting from an Ising antiferromagnetic ground state at (J = +1,gx = gz = 0.1).",
-                                "Fig. 2(e)": "to prepare the Ising ground state (J = −1,gx = 1,gz = 0), starting from a random initial state."
-                            },
-                        "discuss(two major advantages of RL against conventional quantum control algorithms)": [
-                            "增加可允许的操作长度",
-                            "achieve universal quantum state preparation"
-                        ]
-                        },
-                        
-                    "result presentation": {
-                        "figure": "S3",
-                        "table": "",
-                        "description": [
-                            "seucessfully reach the fidelity threshold and hence is capable of performing universal single-partical state preparation"
-                        ]
-                    }
-                },
-                "2. Universal ground state preparation for N = 4 spins":{}
-            }
+            "3.1 Model-based Reinforcement Learning": {
+                
+            },
+            "3.2 Learning the Dynamics": {
+                
+            },
+            "3.3 Online Planning for Closed-Loop Control": {
+                
+            },
+            "3.4 Overview": [
+                "ensembles of deep dynamics models",
+                "calculate H-step horizon candidate action sequences reward",
+                "employ MPC",
+                "perform optimal behavior and observe",
+                ""
+            ]
+        },
+        "4 Experimental Evaluation": {
             
-        }
-            }
             }
         }
     }
